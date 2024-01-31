@@ -1,17 +1,17 @@
 const express =require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
-const EmplyeeModel = require('./models/Employee')
+const CustomerModel = require('./models/customer')
 
 const app =express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect('mongodb://127.0.0.1:27017/employee');
+mongoose.connect("mongodb://127.0.0.1:27017/customer");
 
 app.post('/register',(req,res)=>{
-    EmplyeeModel.create(req.body)
-    .then(employees =>res.json(employees))
+    CustomerModel.create(req.body)
+    .then(customers =>res.json(customers))
     .catch(err =>res.json(err))
 })
 

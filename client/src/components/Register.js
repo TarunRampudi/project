@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import pic from './images1/img.png';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 
 
-const SignupForm = () => {
- const [name, setName] = useState('');
- const [email, setEmail] = useState('');
- const [password, setPassword] = useState('');
- const [phone, setPhone] = useState('');
+function SignupForm  () {
+ const [name, setName] = useState()
+ const [email, setEmail] = useState()
+ const [phone, setPhone] = useState()
+ const [password, setPassword] = useState()
 
- const handleSubmit = async (e) => {
-  e.preventDefault()
-  axios.post('https://localhost:3001/register',{name,email,phone,password})
-  .then(result =>console.log(result))
-  .catch(err=>console.log(err))
+
+ const handleSubmit = (e) => {
+      e.preventDefault()
+      axios.post('http://localhost:3001/register',{name,email,phone,password})
+      .then(result =>console.log(result))
+      .catch(err=>console.log(err))
  }
 
  return (
