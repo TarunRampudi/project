@@ -1,17 +1,17 @@
 import React from 'react'
-import menuitems from '../../fooditemsdata'
-import Items from '../Items'
+import pizzas from '../../fooditemsdata'
+import Pizza from '../Items'
 export default function itemsscreen() {
   return (
     <div>
       <div className="row">
-        {menuitems.map(menuitems=>{
-          return <div className='col-md-4'>
+        {pizzas.map(pizza=>{
+          return (<div className='col-md-4'>
             <div>
-              <Items menuitems={menuitems}/>
+              <Pizza pizza={pizza}/>
               </div>
             </div>
-        })}
+        )})}
       </div>
     </div>
   )
