@@ -1,21 +1,20 @@
-const Items =[
+const  Pizzas=[
     {
-"name":"PEPPER BARBECUE CHICKEN",
-"varients":["small","medium" ,"large"],
-"prices" :[
+name:"PEPPER BARBECUE CHICKEN",
+varients:["small","medium" ,"large"],
+prices :[
     {
 "small":200,
 "medium" :350,
 "large" :400
     }
 ],
-"category" : "nonveg",
-"image": "https://i.insider.com/59c9763224884966f6225939?width=1200&format=jpeg",
-"description" :"Pepper Barbecue Chicken I Cheese",
+category : "nonveg",
+image: "https://i.insider.com/59c9763224884966f6225939?width=1200&format=jpeg",
+description :"Pepper Barbecue Chicken I Cheese",
 },
-
 // {
-//     "name":"PEPPER BARBECUE CHICKEN",
+//     "name":"PEPPER BARBECUE",
 //     "varients":["small","medium" ,"large"],
 //     "prices" :[
 //         {
@@ -44,4 +43,4 @@ const Items =[
 //         }
     ];
 
-export default Items;
+export default Pizzas;
