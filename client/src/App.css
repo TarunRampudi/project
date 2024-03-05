@@ -103,8 +103,9 @@ margin-bottom:190px;
    text-decoration: none;
   }
 .navbar-brand{
-   font-size: 300px;
+   
    font-family: 'Honk', system-ui;
+   font-size:"50px";
 }
 .navbar-nav{
    margin-left: 90%;
@@ -114,4 +115,12 @@ h1{
 }
 .flex-container{
    display: flex;
+}
+.buttons{
+   background-color:red !important;
+   color: white;
+}
+.select{
+ box-shadow: none;
+ background-color: black;
 }

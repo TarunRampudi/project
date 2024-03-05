@@ -3,9 +3,9 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-white rounded">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <h1 className="navbar-brand" style={{ fontSize: "45px" }} href="#">
           Foodies
-        </a>
+        </h1>
         {/* <button
           className="navbar-toggler"
           type="button"
