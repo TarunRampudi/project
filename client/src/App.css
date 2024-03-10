@@ -1,8 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 *{
 margin: 0px;
 padding: 0px;
 box-sizing: border-box;
 }
+.video-container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: -1;
+ }
+ 
+ .video-container video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+ 
+ .button {
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
+   padding: 10px 20px;
+   font-size: 18px;
+   color: #fff;
+   background-color: #007bff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+ 
+ .button:hover {
+   background-color: #0056b3;
+ }
 .App {
  font-family: sans-serif;
  text-align: center;
@@ -17,32 +53,24 @@ box-sizing: border-box;
    justify-content: center;
   }
 .button {
-   margin-left: 200px;
-margin-bottom:300px;
- align-items: center;
- display: inline-block;
- padding: 20px 30px;
+   margin-left: 550px;
+margin-right: 580px;
+margin-bottom:190px;
+ padding: 35px 30px;
  text-decoration: none;
- color: #f9fd00;
+ color: yellow;
  background-color: transparent;
- border: 5px solid rgb(210, 252, 3);
- border-radius: 50px;
- position: absolute;
- bottom: 20px;
+ border: 5px solid black;
+ /* border-radius: 50px; */
  transform: translateX(-50%);
- font-weight: bold;
-
-}
-
-.button:hover {
- background-color: #0056b3;
+ font-weight: bolder;
 }
 
 .form-box {
     max-width: 300px;
     padding: 2rem;
     background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    border: 1px solid #cdd1d5;
     border-radius: 30px;
  }
  label {
@@ -74,3 +102,50 @@ margin-bottom:300px;
    color: black;
    text-decoration: none;
   }
+.navbar-brand{
+   
+   font-family: 'Honk', system-ui;
+   font-size:"50px";
+}
+.navbar-nav{
+   margin-left: 90%;
+}
+h1{
+   font-size: 20px;
+}
+.flex-container{
+   display: flex;
+}
+.buttons{
+   background-color:red !important;
+   color: white;
+}
+.select{
+ box-shadow: none;
+ background-color: black;
+}
+
+
+.restaurant-row {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+ }
+ 
+ .restaurant-container {
+   margin: 20px;
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   width: 300px;
+   text-align: center;
+ }
+ 
+ .restaurant-container img {
+   width: 100%;
+   height: auto;
+ }
+
+
+
+ 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import pic from './images1/img.png';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 
 const LoginForm = () => {
@@ -8,9 +8,9 @@ const LoginForm = () => {
  const [password, setPassword] = useState('');
  
 
-//  const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     if (password !== passwordConfirm) {
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+//     if (password !== password) {
 //       setError('Passwords do not match');
 //       return;
 //     }
@@ -27,10 +27,10 @@ const LoginForm = () => {
 //       console.error('Error:', error);
 //       setError('Error signing up');
 //     }
-//  };
+ };
 
  return (
-    // <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className='image' style={{backgroundImage: `url(${pic})`}}> 
       <div className="form-box">
         <h1>Login</h1>
@@ -55,10 +55,10 @@ const LoginForm = () => {
           />
         </div>
         <Link to="/Register" className="no-underline">New to Order? <span style={{color:"red"}}>Create Account</span></Link>
-        <button type="submit">Signup</button>        
+        <button type="submit"><Link to ="/Homepage"><span style={{color:"white"}}>Login</span></Link></button>        
       </div>
       </div>
-    // </form>
+     </form>
  );
 };
 

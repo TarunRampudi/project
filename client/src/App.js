@@ -1,30 +1,57 @@
-import React from 'react';
-import './App.css';
-import pic from './images/img.png';
-import Register from './components/Register';
-import LoginForm from './components/Login';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-function Home() {
-  return (
-    <div className='image' style={{backgroundImage: `url(${pic})`}}>
-      <Link to="/register" className="button">Order Your Favorite Food</Link>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div className='App'>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/LoginForm" element={<LoginForm />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
-
+import React, { useEffect, useRef, useState } from "react"; 
+import "./App.css"; 
+import video from "./images/video.mp4"; 
+import Login from "./components/Login"; 
+import Homepage from "./components/mainpage"; 
+import Register from "./components/Register"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"; 
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import Restaurants from "./components/Restaurants";
+import Contact from "./components/Contact";
+function Home() { 
+  const videoRef = useRef(null); 
+  const [videoEnded, setVideoEnded] = useState(false); 
+  useEffect(() => { 
+    const video = videoRef.current; 
+    video.play(); 
+    const handleEnded = () => { 
+      setVideoEnded(true); 
+    }; 
+    video.addEventListener("ended", handleEnded); 
+    return () => { 
+      video.removeEventListener("ended", handleEnded); 
+    }; 
+  }, []); 
+  return ( 
+    <div className="video-container"> 
+      <video ref={videoRef} autoPlay muted> 
+        <source src={video} type="video/mp4" /> 
+      </video> 
+      {videoEnded && ( 
+        <div className="navbar-brand" style={{ fontSize: "50px" }}> 
+          <Link to="/register" className="button"> 
+            Foodies 
+          </Link> 
+        </div> 
+      )} 
+    </div> 
+  ); 
+} 
+function App() { 
+  return ( 
+    <div className="App"> 
+      <BrowserRouter> 
+        <Routes> 
+          <Route path="/" element={<Home />} /> 
+          <Route path="/Register" element={<Register />} /> 
+          <Route path="/LoginForm" element={<Login />} /> 
+          <Route path="/Homepage" element={<Homepage />} /> 
+          <Route path="/Restaurants" element={< Restaurants/>}/>
+          <Route path="/Contact" element={<Contact />} /> 
+        </Routes> 
+      </BrowserRouter> 
+    </div> 
+  ); 
+} 
+ 
 export default App;
