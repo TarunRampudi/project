@@ -1,6 +1,9 @@
 import React from "react";
 import pizzas from "../../fooditemsdata";
 import Pizza from "../Items";
+import React from 'react'
+import pizzas from '../../fooditemsdata'
+import Pizza from '../Pizza'
 export default function itemsscreen() {
   return (
     <div>
