@@ -1,10 +1,10 @@
 import Navbar from "./Navbar";
-import Menu from "../components/Screens/Menu"
+import Homescreen from "../components/Screens/Homescreen"
 function Homepage() {
   return (
     <div className="app">
    <Navbar />
-   <Menu />
+   <Homescreen />
    </div>
   );
 }

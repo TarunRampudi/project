@@ -2,6 +2,8 @@ const pizza =[
     {
 name:"Chicken Dum Biryani",
 varients:["small","medium","large"],
+name:"PEPPER BARBECUE CHICKEN",
+varients:["small","medium" ,"large"],
 prices :[
     {
 small:200,
@@ -11,13 +13,13 @@ large :400
 ],
 category : "nonveg",
 image: "https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+image: "https://i.insider.com/59c9763224884966f6225939?width=1200&format=jpeg",
 description :"Pepper Barbecue Chicken I Cheese",
 },
-
 {
     name:"Idli",
     varients:["small","medium","large"],
-        prices :[
+    "prices" :[
         {
     small:50,
     medium :75,
