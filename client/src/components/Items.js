@@ -3,7 +3,13 @@ import React, { useState } from "react";
 export default function Pizza({ pizza }) {
   const [quantity, setquantity] = useState(1);
   const [varients, setVarients] = useState("small");
+  const cartstate = useSelector((state) => state.cartReducer);
 
+  function handleCartClick(){
+    event.preventDefault();
+    cartstate?.cartItems?.length || 0
+    console.log("success");
+  }
   return (
     <div
       style={{ marginTop: "10px" }}
@@ -53,7 +59,7 @@ export default function Pizza({ pizza }) {
           </h3>
         </div>
         <div className="m-1 w-100">
-          <button className="buttons">ADD TO CART</button>
+          <button onClick={handleCartClick} className="buttons">ADD TO CART</button>
         </div>
       </div>
     </div>
