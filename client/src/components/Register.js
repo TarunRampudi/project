@@ -9,20 +9,26 @@ function SignupForm  () {
  const [email, setEmail] = useState()
  const [phone, setPhone] = useState()
  const [password, setPassword] = useState()
+ const [message, setMessage] = useState("");
 
 
  const handleSubmit = (e) => {
-      e.preventDefault()
-      axios.post('http://localhost:3001/register',{name,email,phone,password})
-      .then(result =>console.log(result))
-      .catch(err=>console.log(err))
- }
+  e.preventDefault();
+  axios
+    .post("http://localhost:3001/register", { name, email, phone, password })
+    .then((response) => {
+      setMessage(response.data.message);
+    })
+    .catch((error) => {
+      setMessage(error.response.data.message);
+    });
+};
 
  return (
     <form onSubmit={handleSubmit}>
       <div className='image' style={{backgroundImage: `url(${pic})`}}> 
       <div className="form-box">
-      <h1>Register</h1>
+      <h1>SignUp</h1>
         <div className="input-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -65,6 +71,7 @@ function SignupForm  () {
         </div>
         <Link to="/LoginForm" className="no-underline">Already have an account? <span style={{color:"red"}}>Log in</span></Link>        
         <button type="submit">Signup</button>
+        {message && <p>{message}</p>}
       </div>
       </div>
     </form>

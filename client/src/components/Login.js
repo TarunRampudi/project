@@ -55,7 +55,7 @@ const LoginForm = () => {
           />
         </div>
         <Link to="/Register" className="no-underline">New to Order? <span style={{color:"red"}}>Create Account</span></Link>
-        <button type="submit"><Link to ="/Homepage">Login</Link></button>        
+        <button type="submit"><Link to ="/Homepage"><span style={{color:"white"}}>Login</span></Link></button>        
       </div>
       </div>
      </form>

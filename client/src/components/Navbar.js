@@ -1,32 +1,43 @@
 import React from "react";
+import { Button } from "bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import Restaurants from "./Restaurants";
+export const useAppDispatch = () => useDispatch();
+export const ADD_TO_CART = "ADD_TO_CART";
 export default function Navbar() {
+  const cartstate = useSelector((state) => state.cartReducer);
+
+  const handleLogoutClick = (e) => {
+    e.preventDefault();
+    window.location.href = "/LoginForm";
+  };
+
   return (
     <nav className="navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-white rounded">
       <div className="container-fluid">
-        <h1 className="navbar-brand" style={{ fontSize: "45px" }} href="#">
+        <h1 className="navbar-brand" style={{ fontSize: "45px" }}>
           Foodies
         </h1>
-        {/* <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-        </button> */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav" style={{ marginLeft: "1000px" }}>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Logout
+              <a className="nav-link" href="./Restaurants">
+                <h5>Restaurants </h5>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Cart
+              <a className="nav-link" href="/cart">
+                <h5>Cart {cartstate?.cartItems?.length || 0} </h5>
               </a>
+            </li>
+            <li className="nav-item">
+              <button
+                className="nav-link active"
+                aria-current="page"
+                onClick={handleLogoutClick}
+              >
+                Logout
+              </button>
             </li>
           </ul>
         </div>
